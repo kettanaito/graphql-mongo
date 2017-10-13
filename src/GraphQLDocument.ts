@@ -59,7 +59,11 @@ export default class GraphQLDocument {
     return this;
   }
 
-  appendGraphQLDefinitions = (definitions: TGraphQLDefinitions): Object => {
+  /**
+   * Append dynamic GraphQL definitions (queries/mutations/subscriptions) Object
+   * to the created GraphQLDocument.
+   */
+  appendGraphQLDefinitions(definitions: TGraphQLDefinitions): Object {
     return Object.keys(definitions).reduce((allDefinitions, definitionName) => {
       const getQuery = definitions[definitionName];
 

@@ -7,6 +7,7 @@
   "types": "./src/index.d.ts",
   "main": "./lib/index.js",
   "scripts": {
+    "start": "nodemon example/ --exec babel-node",
     "test": "mocha test/**/*.spec",
     "build": "NODE_ENV=production webpack"
   },
@@ -33,9 +34,19 @@
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.2.3",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.2",
+    "express": "^4.16.2",
+    "express-graphql": "^0.6.11",
+    "graphql": "^0.11.7",
     "mocha": "^4.0.1",
+    "mongoose": "^4.12.1",
+    "mongoose-schema-to-graphql": "^2.6.9",
+    "nodemon": "^1.12.1",
     "typescript": "^2.5.3",
     "webpack": "^3.7.1"
-  }
+  },
+  "dependencies": {}
 }
