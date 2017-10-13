@@ -44,10 +44,11 @@
     "graphql": "^0.11.7",
     "mocha": "^4.0.1",
     "mongoose": "^4.12.1",
-    "mongoose-schema-to-graphql": "^2.6.9",
     "nodemon": "^1.12.1",
     "typescript": "^2.5.3",
     "webpack": "^3.7.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "mongoose-schema-to-graphql": "^2.6.9"
+  }
 }
