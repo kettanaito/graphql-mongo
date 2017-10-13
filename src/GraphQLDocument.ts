@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 import createGraphQLType from 'mongoose-schema-to-graphql';
-import { TGraphQLDocumentOptions, TGraphQLDefinitions } from './index.d';
+import { TGraphQLDocumentOptions, TGraphQLDefinitions } from '../types';
 
 const defaultOptions: TGraphQLDocumentOptions = {
   schema: {},
@@ -39,6 +39,7 @@ export default class GraphQLDocument {
       enhanceSchema(this.schema);
     }
 
+    /* Create mongoose model */
     this.Model = mongoose.model(name, this.schema);
 
     /* Create GraphQL type from the mongoose schema */
