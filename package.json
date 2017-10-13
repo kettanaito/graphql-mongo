@@ -1,0 +1,40 @@
+{
+  "name": "graphql-mongo",
+  "libraryName": "GraphQLMongo",
+  "version": "0.1.0",
+  "description": "",
+  "source": "./src/index.ts",
+  "types": "./src/index.d.ts",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "mocha test/**/*.spec",
+    "build": "NODE_ENV=production webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kettanaito/graphql-mongo.git"
+  },
+  "keywords": [
+    "graphql",
+    "mongodb",
+    "mongoose",
+    "graphql-mongo"
+  ],
+  "author": "Artem Zakharchenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kettanaito/graphql-mongo/issues"
+  },
+  "homepage": "https://github.com/kettanaito/graphql-mongo#readme",
+  "dependencies": {
+    "graphql": "^0.11.7",
+    "mongoose": "^4.12.1",
+    "mongoose-schema-to-graphql": "^2.6.9"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.2.3",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "webpack": "^3.7.1"
+  }
+}
