@@ -9,7 +9,8 @@
   "scripts": {
     "start": "nodemon example/ --exec babel-node",
     "test": "mocha test/**/*.spec",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "prepublishOnly": "npm run build && npm test"
   },
   "repository": {
     "type": "git",
