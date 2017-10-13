@@ -7,7 +7,7 @@ declare module 'graphql-mongo' {
     exclude: RegExp | [string]
   }
 
-  type TGraphQLQueryCollection = {
+  type TGraphQLDefinitions = {
     [queryName: string]: () => Object
   }
 
@@ -17,8 +17,8 @@ declare module 'graphql-mongo' {
     schema: mongoose.SchemaDefinition,
     enhanceSchema?: (schema: mongoose.Schema) => void,
     typeOptions?: TGraphQLTypeOptions;
-    queries?: TGraphQLQueryCollection,
-    mutations?: TGraphQLQueryCollection,
-    subscriptions?: TGraphQLQueryCollection
+    queries?: TGraphQLDefinitions,
+    mutations?: TGraphQLDefinitions,
+    subscriptions?: TGraphQLDefinitions
   }
 }

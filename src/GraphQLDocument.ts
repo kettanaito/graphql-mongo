@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 import createGraphQLType from 'mongoose-schema-to-graphql';
-import { TGraphQLDocumentOptions, TGraphQLQueryCollection } from './index.d';
+import { TGraphQLDocumentOptions, TGraphQLDefinitions } from './index.d';
 
 const defaultOptions: TGraphQLDocumentOptions = {
   schema: {},
@@ -43,25 +43,25 @@ export default class GraphQLDocument {
       exclude: typeOptions.exclude
     });
 
-    /* Append GraphQL queries */
-    if (queries) this.queries = this.appendGraphQLQueries(queries);
-    if (mutations) this.mutations = this.appendGraphQLQueries(mutations);
-    if (subscriptions) this.subscriptions = this.appendGraphQLQueries(subscriptions);
+    /* Append GraphQL definitions */
+    if (queries) this.queries = this.appendGraphQLDefinitions(queries);
+    if (mutations) this.mutations = this.appendGraphQLDefinitions(mutations);
+    if (subscriptions) this.subscriptions = this.appendGraphQLDefinitions(subscriptions);
 
     return this;
   }
 
-  appendGraphQLQueries = (queries: TGraphQLQueryCollection): Object => {
-    return Object.keys(queries).reduce((allQueries, queryName) => {
-      const getQuery = queries[queryName];
+  appendGraphQLDefinitions = (definitions: TGraphQLDefinitions): Object => {
+    return Object.keys(definitions).reduce((allDefinitions, definitionName) => {
+      const getQuery = definitions[definitionName];
 
-      allQueries[queryName] = getQuery({
+      allDefinitions[definitionName] = getQuery({
         type: this.type,
         schema: this.schema,
         Model: this.Model
       });
 
-      return allQueries;
+      return allDefinitions;
     }, {})
   }
 }
