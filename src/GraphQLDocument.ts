@@ -24,6 +24,7 @@ export default class GraphQLDocument {
       name,
       description,
       schema: schemaDefinition,
+      enhanceSchema,
       typeOptions,
       queries,
       mutations,
@@ -32,6 +33,12 @@ export default class GraphQLDocument {
 
     /* Create mongoose schema */
     this.schema = new mongoose.Schema(schemaDefinition);
+
+    /* (Optional) Enhance the created Schema */
+    if (enhanceSchema) {
+      enhanceSchema(this.schema);
+    }
+
     this.Model = mongoose.model(name, this.schema);
 
     /* Create GraphQL type from the mongoose schema */
