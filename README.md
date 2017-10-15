@@ -15,12 +15,12 @@ This library is meant to make it easier and faster to get started using GraphQL 
 | `GraphQLDocument` | Wraps mongoose Schema definition, GraphQL queries/mutations/subscriptions into a managable Object, allowing easier GraphQL types composition and referencing. |
 
 ## Usage example
-There is a minimal example of usage included within the library. Please see its [source code](./example) or run it locally on your machine, following the instructions below:
+There is a minimal example of usage included within the library. Please see its [source code](./example) or run it locally on your machine by following the instructions below:
 
 1. Fork the repository.
 1. Install the dependencies with `npm install`.
 2. Run `npm start` from the repository directory. This will create a simple Express server with the connection to the test Mongo database.
-3. Navigate to [http://localhost:8040](http://localhost:8040). Play around with the GraphQL using an amazing GraphiQL IDE.
+3. Navigate to [http://localhost:8040](http://localhost:8040). Play around with GraphQL using an incredible GraphiQL IDE.
 
 ## Special thanks
 * [express-graphql](https://github.com/graphql/express-graphql). Easy way to establish a GraphQL end-point in your Express server.
